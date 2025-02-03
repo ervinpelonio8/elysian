@@ -111,14 +111,20 @@ async function logout() {
               </a>
               <a
                 href="#"
-                class="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                :class="[
+                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground',
+                  pageName === 'Products' ? 'bg-muted' : '',
+                ]"
               >
                 <ShoppingCart class="h-5 w-5" />
                 Products
               </a>
               <a
-                href="#"
-                class="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                href="/chat"
+                :class="[
+                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground',
+                  pageName === 'Chat' ? 'bg-muted' : '',
+                ]"
               >
                 <MessageCircle class="h-5 w-5" />
                 Chat
