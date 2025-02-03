@@ -9,7 +9,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { CircleUser, Menu, MessageCircle, Package2, ShoppingCart } from "lucide-vue-next";
+import {
+  CircleUser,
+  Menu,
+  MessageCircle,
+  Package2,
+  ShoppingCart,
+  Shirt,
+} from "lucide-vue-next";
 import { useRouter } from "vue-router";
 import axios from "axios";
 
