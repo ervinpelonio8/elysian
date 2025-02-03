@@ -110,7 +110,7 @@ async function logout() {
                 <span class="sr-only">My Store</span>
               </a>
               <a
-                href="#"
+                href="/products"
                 :class="[
                   'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground',
                   pageName === 'Products' ? 'bg-muted' : '',

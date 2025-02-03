@@ -63,7 +63,7 @@ async function logout() {
         <div class="flex-1 overflow-y-auto">
           <nav class="grid items-start px-2 text-sm font-medium lg:px-4">
             <a
-              href="#"
+              href="/add-product"
               :class="[
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary',
                 pageName === 'Add Product' ? 'bg-muted' : '',
@@ -89,13 +89,19 @@ async function logout() {
           </SheetTrigger>
           <SheetContent side="left" class="flex flex-col">
             <nav class="grid gap-2 text-lg font-medium">
-              <a href="#" class="flex items-center gap-2 text-lg font-semibold">
+              <a
+                href="/add-product"
+                class="flex items-center gap-2 text-lg font-semibold"
+              >
                 <Package2 class="h-6 w-6" />
                 <span class="sr-only">My Store Administrator</span>
               </a>
               <a
-                href="#"
-                class="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                href="/add-product"
+                :class="[
+                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground',
+                  pageName === 'Add Product' ? 'bg-muted' : '',
+                ]"
               >
                 <Package class="h-5 w-5" />
                 Add Product
