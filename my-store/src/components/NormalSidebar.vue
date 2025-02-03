@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
+import { ref, defineEmits } from "vue";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,6 +32,7 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["scrolled-bottom"]);
 const router = useRouter();
 
 async function logout() {
@@ -52,6 +54,18 @@ async function logout() {
 
   router.push("/login");
 }
+const mainContainer = ref<HTMLElement | null>(null);
+const handleScroll = () => {
+  if (!mainContainer.value) return;
+  const threshold = 300;
+  const scrollTop = mainContainer.value.scrollTop;
+  const clientHeight = mainContainer.value.clientHeight;
+  const scrollHeight = mainContainer.value.scrollHeight;
+
+  if (scrollTop + clientHeight >= scrollHeight - threshold) {
+    emit("scrolled-bottom");
+  }
+};
 </script>
 
 <template>
@@ -158,6 +172,8 @@ async function logout() {
       </header>
       <main
         class="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 overflow-y-auto h-[calc(100vh-60px)]"
+        ref="mainContainer"
+        @scroll="handleScroll"
       >
         <slot></slot>
       </main>

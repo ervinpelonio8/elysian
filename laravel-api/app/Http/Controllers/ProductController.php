@@ -58,9 +58,10 @@ class ProductController extends Controller
         }
     }
 
-    public function get_all()
+    public function get_all(Request $request)
     {
-        $products = Product::all();
+        $perPage = $request->input('per_page', 10); // Default to 10 items per page
+        $products = Product::paginate($perPage);
         return response()->json($products);
     }
 
